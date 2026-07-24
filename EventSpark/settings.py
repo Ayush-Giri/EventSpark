@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #local
     'custom_user',
+    'event',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,7 @@ STATIC_URL = 'static/'
 
 # registering our custom user model in the settings
 AUTH_USER_MODEL = "custom_user.CustomUser"
+
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'

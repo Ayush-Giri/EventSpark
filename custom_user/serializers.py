@@ -19,7 +19,11 @@ class CustomUserSerializer(serializers.ModelSerializer):
             'password',
             'phone_number',
             'role',
-            'profile_photo'
+            'profile_photo',
+            'created_at'
+        ]
+        read_only_fields = [
+            'created_at'
         ]
 
     def create(self, validated_data):
