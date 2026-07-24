@@ -6,3 +6,10 @@ class IsOrganiser(BasePermission):
         if request.user.role == "organiser":
             return True
         return False
+
+
+class IsEventOwner(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        # view is the view or viewset using this permission
+        # obj is the specific models intance being accessed
+        return obj.organiser == request.user
